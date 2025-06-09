@@ -1,0 +1,97 @@
+#heroHome {
+  padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 90vh;
+  padding-left: 2.5rem;
+  cursor: default;
+  user-select: none;
+  background-image: url(/src/assets/backgroundHero.webp);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  gap: 3rem;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.336);
+    box-shadow: rgba(0, 0, 0, 0.336) 2px 0px 10px 10px;
+    transform: skew(-40deg) translateX(-120px);
+    width: 55vw;
+    height: 100%;
+    border: none;
+    z-index: 1;
+  }
+  & > article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    gap: 1rem;
+    z-index: 2;
+    width: 45vw;
+    & > h1 {
+      font-size: 3rem;
+      text-transform: uppercase;
+      color: var(--fontsLight);
+      text-shadow: black 1px 1px 1px;
+      font-weight: 900;
+    }
+    & > p {
+      font-size: 1.5rem;
+      color: var(--fontsLight);
+      text-shadow: black 1px 1px 1px;
+      font-weight: 500;
+      width: 75%;
+    }
+  }
+  & > nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 45vw;
+    z-index: 2;
+    & > a {
+      color: var(--fontsLight);
+      text-decoration: none;
+      text-transform: uppercase;
+      font-family: "Poppins", sans-serif;
+      font-weight: 800;
+      letter-spacing: 1px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding-left: 2rem;
+      background-color: var(--details);
+      color: var(--fontsDark);
+      padding: 0.25rem 1.25rem;
+      border-radius: 10px;
+      transition: all 200ms ease-in-out;
+      & > span {
+        width: 35px;
+        height: 35px;
+        transform: translateX(-15px);
+        transition: all 200ms ease-in-out;
+      }
+      &:hover span {
+        transition: all 200ms ease-in-out;
+        transform: translateX(0);
+      }
+      &:hover {
+        background-color: var(--header);
+        color: var(--fontsLight);
+        transition: all 200ms ease-in-out;
+        text-shadow: black 1px 1px 1px;
+      }
+    }
+  }
+}

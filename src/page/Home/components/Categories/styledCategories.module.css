@@ -1,0 +1,224 @@
+#categoriesSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  & > article {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 2rem;
+    & > h1 {
+      font-size: 2rem;
+      text-transform: uppercase;
+      color: var(--fontsLight);
+      text-shadow: black 1px 1px 1px;
+      cursor: default;
+    }
+    & > a {
+      color: var(--fontsLight);
+      text-decoration: none;
+      text-transform: uppercase;
+      font-family: "Poppins", sans-serif;
+      font-weight: 800;
+      letter-spacing: 1px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding-left: 2rem;
+      background-color: var(--details);
+      color: var(--fontsDark);
+      padding: 0.25rem 1.25rem;
+      border-radius: 10px;
+      transition: all 200ms ease-in-out;
+      cursor: pointer;
+      &:hover {
+        background-color: var(--header);
+        transition: all 200ms ease-in-out;
+        color: var(--fontsLight);
+        text-shadow: black 1px 1px 1px;
+      }
+    }
+  }
+  & > ul {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    padding: 1rem 2rem;
+    & > li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      list-style: none;
+      position: relative;
+      width: 300px;
+      height: 300px;
+      background-color: rgba(190, 190, 190, 0.5);
+      border-radius: 15px;
+      cursor: pointer;
+      transition: all 200ms ease-in-out;
+      & > figure {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        transition: all 200ms ease-in-out;
+        border-radius: 15px;
+        overflow: hidden;
+        & > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            filter: blur(2px); 
+            opacity: .75;
+            transition: all 200ms ease-in-out;
+        }
+        &:hover img {
+            transition: all 200ms ease-in-out;
+            filter: blur(0);
+            opacity: 1;
+
+        }
+      }
+      & > figcaption {
+        text-transform: uppercase;
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        letter-spacing: 2px;
+        font-size: 1.25rem;
+        text-shadow: rgba(255, 255, 255, 0.555) 0px 0px 4px;
+      }
+      &:hover {
+        transition: all 200ms ease-in-out;
+        box-shadow: rgba(0, 0, 0, 0.575) 0px 3px 3px;
+        transform: translateY(-5px);
+        background-color: rgba(226, 226, 226, 0.61);
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  #categoriesSection {
+    & > article {
+      & > h1 {
+        font-size: 1.8rem;
+      }
+      & > a {
+        font-size: 0.9rem;
+        padding: 0.2rem 1rem;
+      }
+    }
+    & > ul {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.8rem;
+      & > li {
+        width: 280px;
+        height: 280px;
+        & > figure {
+          width: 280px;
+          height: 280px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  #categoriesSection {
+    & > article {
+      padding: 0.8rem 1.5rem;
+      & > h1 {
+        font-size: 1.6rem;
+      }
+      & > a {
+        font-size: 0.85rem;
+        padding: 0.2rem 0.8rem;
+      }
+    }
+    & > ul {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.8rem;
+      padding: 0.8rem 1.5rem;
+      & > li {
+        width: 260px;
+        height: 260px;
+        & > figure {
+          width: 260px;
+          height: 260px;
+        }
+        & > figcaption {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #categoriesSection {
+    & > article {
+      padding: 0.7rem 1.2rem;
+      & > h1 {
+        font-size: 1.4rem;
+      }
+      & > a {
+        font-size: 0.8rem;
+        padding: 0.15rem 0.7rem;
+      }
+    }
+    & > ul {
+      gap: 0.7rem;
+      padding: 0.7rem 1.2rem;
+      & > li {
+        width: 240px;
+        height: 240px;
+        & > figure {
+          width: 240px;
+          height: 240px;
+        }
+        & > figcaption {
+          font-size: 1rem;
+          letter-spacing: 1.5px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  #categoriesSection {
+    & > article {
+      padding: 0.6rem 1rem;
+      & > h1 {
+        font-size: 1.2rem;
+      }
+      & > a {
+        font-size: 0.75rem;
+        padding: 0.15rem 0.6rem;
+      }
+    }
+    & > ul {
+      grid-template-columns: 1fr;
+      gap: 0.6rem;
+      padding: 0.6rem 1rem;
+      & > li {
+        width: 300px;
+        height: 300px;
+        & > figure {
+          width: 300px;
+          height: 300px;
+        }
+        & > figcaption {
+          font-size: 1.1rem;
+          letter-spacing: 2px;
+        }
+      }
+    }
+  }
+}
