@@ -12,9 +12,11 @@
   background-image: url(/src/assets/backgroundHero.webp);
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   overflow: hidden;
   gap: 3rem;
   position: relative;
+
   &::before {
     content: "";
     position: absolute;
@@ -30,6 +32,7 @@
     border: none;
     z-index: 1;
   }
+
   & > article {
     display: flex;
     flex-direction: column;
@@ -39,6 +42,7 @@
     gap: 1rem;
     z-index: 2;
     width: 45vw;
+
     & > h1 {
       font-size: 3rem;
       text-transform: uppercase;
@@ -46,6 +50,7 @@
       text-shadow: black 1px 1px 1px;
       font-weight: 900;
     }
+
     & > p {
       font-size: 1.5rem;
       color: var(--fontsLight);
@@ -54,12 +59,14 @@
       width: 75%;
     }
   }
+
   & > nav {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     width: 45vw;
     z-index: 2;
+
     & > a {
       color: var(--fontsLight);
       text-decoration: none;
@@ -76,21 +83,97 @@
       padding: 0.25rem 1.25rem;
       border-radius: 10px;
       transition: all 200ms ease-in-out;
+
       & > span {
         width: 35px;
         height: 35px;
         transform: translateX(-15px);
         transition: all 200ms ease-in-out;
       }
+
       &:hover span {
-        transition: all 200ms ease-in-out;
         transform: translateX(0);
       }
+
       &:hover {
         background-color: var(--header);
         color: var(--fontsLight);
-        transition: all 200ms ease-in-out;
         text-shadow: black 1px 1px 1px;
+      }
+    }
+  }
+}
+
+/* 🔁 Responsive para tablets */
+@media (max-width: 1024px) {
+  #heroHome {
+    padding-left: 2rem;
+    align-items: center;
+    text-align: center;
+    &::before {
+      transform: none;
+      width: 100vw;
+    }
+
+    & > article {
+      width: 80%;
+      align-items: center;
+
+      & > h1 {
+        font-size: 2.5rem;
+      }
+
+      & > p {
+        font-size: 1.2rem;
+        width: 90%;
+        text-align: center;
+      }
+    }
+
+    & > nav {
+      width: 80%;
+      justify-content: center;
+    }
+  }
+}
+
+/* 📱 Responsive para móviles */
+@media (max-width: 600px) {
+  #heroHome {
+    padding-left: 1rem;
+    align-items: center;
+    gap: 2rem;
+
+    & > article {
+      width: 100%;
+      align-items: center;
+
+      & > h1 {
+        font-size: 2rem;
+        text-align: center;
+      }
+
+      & > p {
+        font-size: 1rem;
+        width: 90%;
+        text-align: center;
+      }
+    }
+
+    & > nav {
+      width: 100%;
+      justify-content: center;
+
+      & > a {
+        font-size: 0.9rem;
+        padding: 0.4rem 1rem;
+        text-align: center;
+
+        & > span {
+          width: 25px;
+          height: 25px;
+          transform: translateX(-10px);
+        }
       }
     }
   }

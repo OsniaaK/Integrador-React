@@ -3,7 +3,7 @@ import useCart from "../../context/useCart.jsx";
 import { CartGeneral } from "../Cart/Cart.jsx";
 import { NavLink, useNavigate } from "react-router";
 import useProducts from "../../context/useProducts.jsx";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 const GeneralHeader = () => {
   const { items, toggle } = useCart();
@@ -28,6 +28,9 @@ const GeneralHeader = () => {
     }
   };
 
+  const menuRef = useRef(null);
+  const buttonRef = useRef(null);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -35,6 +38,37 @@ const GeneralHeader = () => {
   const handleNavClick = () => {
     setIsMenuOpen(false);
   };
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const handleClickOutside = (event) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target)
+      ) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.body.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.body.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.classList.add("body-blur");
+    } else {
+      document.body.classList.remove("body-blur");
+    }
+
+    return () => document.body.classList.remove("body-blur");
+  }, [isMenuOpen]);
 
   return (
     <>
@@ -80,7 +114,7 @@ const GeneralHeader = () => {
             id="search"
             defaultValue={search}
             onKeyDown={handleKeyDown}
-            placeholder="Write to Search..."
+            placeholder="Buscar..."
           />
           <button>
             <svg
@@ -119,7 +153,8 @@ const GeneralHeader = () => {
             </svg>
           </button>
           <button 
-            type="button" 
+            type="button"
+            ref={buttonRef}
             id={style.btnMenu}
             onClick={toggleMenu}
             className={isMenuOpen ? style.menuOpen : ""}
@@ -140,7 +175,7 @@ const GeneralHeader = () => {
           </button>
         </form>
       </header>
-      <nav className={`${style.mobileNav} ${isMenuOpen ? style.active : ""}`}>
+      <nav ref={menuRef} className={`${style.mobileNav} ${isMenuOpen ? style.active : ""}`}>
         <NavLink
           className={({ isActive }) =>
             isActive ? `${style.link} ${style.active}` : `${style.link}`

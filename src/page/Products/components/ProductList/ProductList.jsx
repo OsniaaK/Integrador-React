@@ -170,7 +170,7 @@ const ProductsSect = () => {
                   display: product.discount ? "inline" : "none",
                 }}
               >
-                {product.discount}% OFF
+                -{product.discount}%
               </span>
               <img src={product.image} alt={product.title} />
             </picture>
@@ -190,6 +190,7 @@ const ProductsSect = () => {
                   </strong>
                 )}
               </p>
+            </article>
               <fieldset>
                 <button
                   type="button"
@@ -230,7 +231,6 @@ const ProductsSect = () => {
                   </svg>
                 </button>
               </fieldset>
-            </article>
           </li>
         ))}
       </ul>
