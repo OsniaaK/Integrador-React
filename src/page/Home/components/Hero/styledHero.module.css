@@ -9,7 +9,7 @@
   padding-left: 2.5rem;
   cursor: default;
   user-select: none;
-  background-image: url(/src/assets/backgroundHero.webp);
+  background-image: url(/public/assets/backgroundHero.webp);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

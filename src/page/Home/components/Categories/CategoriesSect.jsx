@@ -20,25 +20,25 @@ const CategoriesSection = () => {
         <ul>
           <li onClick={ () => onClick("Ropa") }>
             <figure>
-              <img src="../src/assets/Categories/clothes.webp" alt="clothes" />
+              <img src="/assets/Categories/clothes.webp" alt="clothes" />
             </figure>
             <figcaption>Ropa</figcaption>
           </li>
           <li onClick={ () => onClick("Calzado")}>
             <figure>
-              <img src="../src/assets/Categories/shoes.webp" alt="shoes" />
+              <img src="/assets/Categories/shoes.webp" alt="shoes" />
             </figure>
             <figcaption>Calzado</figcaption>
           </li>
           <li onClick={ () => onClick("Accesorios")}>
             <figure>
-              <img src="../src/assets/Categories/accesories.webp" alt="accessories" />
+              <img src="/assets/Categories/accesories.webp" alt="accessories" />
             </figure>
             <figcaption>Accesorios</figcaption>
           </li>
           <li onClick={ () => onClick("Deporte")}>
             <figure>
-              <img src="../src/assets/Categories/sports.webp" alt="sports" />
+              <img src="/assets/Categories/sports.webp" alt="sports" />
             </figure>
             <figcaption>Deporte</figcaption>
           </li>
