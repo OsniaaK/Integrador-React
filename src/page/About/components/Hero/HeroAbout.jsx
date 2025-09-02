@@ -21,7 +21,7 @@ const About = () => {
       <figure>
         <a href="https://instagram.com/laugsuarezz" target="_blank">
           <img
-            src="../src/assets/About/CEOIG.jpeg"
+            src="/public/assets/About/CEOIG.jpeg"
             alt="Equipo de la empresa"
             className={styled.heroAboutImg}
           />
